@@ -1,0 +1,2 @@
+# Performance: avoid stat'ing input files
+build --watchfs
