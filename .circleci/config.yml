@@ -8,7 +8,7 @@ jobs:
       - checkout
       - restore_cache:
           key: tsickle-{{ .Branch }}-{{ checksum "yarn.lock" }}
-      - run: bazel build ...
+      - run: bazel build ... || bazel build ...
       - save_cache:
           key: tsickle-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:
