@@ -3,12 +3,11 @@ jobs:
   build:
     working_directory: ~/tsickle
     docker:
-      - image: alexeagle/ngcontainer
+      - image: insready/bazel
     steps:
       - checkout
       - restore_cache:
           key: tsickle-{{ .Branch }}-{{ checksum "yarn.lock" }}
-      - run: yarn install
       - run: bazel build ...
       - save_cache:
           key: tsickle-{{ .Branch }}-{{ checksum "yarn.lock" }}

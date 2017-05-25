@@ -14,4 +14,4 @@ node_repositories()
 
 # Install yarn, and run yarn install to create node_modules.
 # Also creates the BUILD file under node_modules.
-yarn_install(package_json = ":package.json")
+yarn_install(package_json = "//:package.json")
