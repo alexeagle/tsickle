@@ -8,6 +8,8 @@ jobs:
       - checkout
       - restore_cache:
           key: tsickle-{{ .Branch }}-{{ checksum "yarn.lock" }}
+      # Build twice, workaround for
+      # https://github.com/bazelbuild/bazel/issues/3114
       - run: bazel build ... || bazel build ...
       - save_cache:
           key: tsickle-{{ .Branch }}-{{ checksum "yarn.lock" }}
