@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/tsickle
     docker:
-      - image: insready/bazel
+      - image: alexeagle/ngcontainer
     steps:
       - checkout
       - restore_cache:
